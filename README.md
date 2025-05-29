@@ -1,5 +1,4 @@
-```
-#🌦️ Weather Dashboard (React + TypeScript)
+# 🌦️ Weather Dashboard
 
 A responsive weather application that displays current weather conditions and 5-day forecasts using the OpenWeatherMap API.
 
@@ -27,8 +26,9 @@ A responsive weather application that displays current weather conditions and 5-
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/weather-dashboard.git
-   cd weather-dashboard
-```
+   cd weather-dashboar
+   ```
+
 
 2. Install dependencies:
    **bash**
