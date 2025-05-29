@@ -1,46 +1,83 @@
-# Getting Started with Create React App
+```
+#🌦️ Weather Dashboard (React + TypeScript)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive weather application that displays current weather conditions and 5-day forecasts using the OpenWeatherMap API.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- 🔍 Search for any city worldwide
+- 🌡️ Real-time weather data (temperature, humidity, wind speed)
+- ☀️🌧️ Weather condition icons
+- 📅 5-day weather forecast
+- 🌡️ Unit toggle (Celsius/Fahrenheit)
+- 🔄 Auto-refresh every 30 seconds
+- 💾 Persistent search history (local storage)
+- 📱 Fully responsive design
 
-### `npm start`
+## 🛠 Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React 18 (with Hooks)
+- TypeScript
+- CSS Modules
+- OpenWeatherMap API
+- Vite (or Create React App)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📦 Installation
 
-### `npm test`
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/weather-dashboard.git
+   cd weather-dashboard
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install dependencies:
+   **bash**
 
-### `npm run build`
+   ```
+   npm install
+   ```
+3. Set up your OpenWeatherMap API key:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   * Create a `.env` file in the root directory
+   * Add your API key:
+     **env**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+     ```
+     VITE_APP_OPENWEATHER_API_KEY=your_api_key_here
+     ```
+4. Run the development server:
+   **bash**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```
+   npm run dev
+   ```
 
-### `npm run eject`
+## 🌐 API Configuration
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This project uses the [OpenWeatherMap API](https://openweathermap.org/api):
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Sign up for a free API key
+* Free tier provides:
+  * 1,000 API calls/day
+  * Current weather + 5-day forecast
+  * 60 calls/minute rate limit
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🎨 Styling
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* CSS Modules for component-scoped styles
+* Mobile-first responsive design
+* Clean, minimalist UI
 
-## Learn More
+## 🚨 Troubleshooting
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If you get a **401 Unauthorized** error:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Verify your API key is correct
+2. Ensure the key is activated (may take 2-24 hours)
+3. Check for typos in the `.env` file
+4. Restart your development server after changing `.env`
+
+## 🙏 Acknowledgments
+
+* OpenWeatherMap for the weather data API
+* React and Vite teams for amazing tools
