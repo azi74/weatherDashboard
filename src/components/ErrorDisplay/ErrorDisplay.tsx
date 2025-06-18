@@ -1,5 +1,5 @@
 import React from 'react';
-import { useWeather } from '../../hooks/useWeather';
+import { useWeather } from '../../context/WeatherContext';
 import styles from './ErrorDisplay.module.css';
 
 const ErrorDisplay: React.FC = () => {
@@ -8,8 +8,8 @@ const ErrorDisplay: React.FC = () => {
   if (!error) return null;
 
   return (
-    <div className={styles.errorContainer}>
-      <p className={styles.errorMessage}>{error}</p>
+    <div className={`${styles.errorContainer} glass-card`}>
+      <p>{error}</p>
     </div>
   );
 };

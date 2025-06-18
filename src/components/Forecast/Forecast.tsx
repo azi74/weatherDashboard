@@ -1,5 +1,5 @@
 import React from 'react';
-import { useWeather } from '../../hooks/useWeather';
+import { useWeather } from '../../context/WeatherContext';
 import styles from './Forecast.module.css';
 
 const Forecast: React.FC = () => {
@@ -7,7 +7,6 @@ const Forecast: React.FC = () => {
 
   if (!forecastData) return null;
 
-  // Group forecast by day
   const dailyForecast = forecastData.list.reduce((acc: any, item: any) => {
     const date = item.dt_txt.split(' ')[0];
     if (!acc[date]) {
@@ -17,13 +16,11 @@ const Forecast: React.FC = () => {
     return acc;
   }, {});
 
-  // Get the next 5 days (excluding today)
   const forecastDates = Object.keys(dailyForecast).slice(1, 6);
-
   const temperatureUnit = unit === 'metric' ? '°C' : '°F';
 
   return (
-    <div className={styles.forecastContainer}>
+    <div className={`${styles.forecastContainer} glass-card`}>
       <h3>5-Day Forecast</h3>
       <div className={styles.forecastDays}>
         {forecastDates.map((date) => {
@@ -37,13 +34,13 @@ const Forecast: React.FC = () => {
 
           return (
             <div key={date} className={styles.forecastDay}>
-              <p>{dayName}</p>
+              <p className={styles.dayName}>{dayName}</p>
               <img 
-                src={`https://openweathermap.org/img/wn/${icon}.png`} 
+                src={`https://openweathermap.org/img/wn/${icon}@2x.png`} 
                 alt={mainWeather} 
               />
-              <p>{avgTemp}{temperatureUnit}</p>
-              <p>{mainWeather}</p>
+              <p className={styles.dayTemp}>{avgTemp}{temperatureUnit}</p>
+              <p className={styles.dayWeather}>{mainWeather}</p>
             </div>
           );
         })}
